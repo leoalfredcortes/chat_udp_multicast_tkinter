@@ -26,7 +26,7 @@ def saludo_mano(client):  # Takes client socket as argument.
     """Handles a single client connection."""
 
     name = client.recv(BUFSIZ).decode("utf8")
-    welcome = 'Bienvenido %s! Siquieres cerrar el chat escribe, ->   {quit} <- para salir.' % name
+    welcome = 'Bienvenido %s! Siquieres cerrar el chat escribe, -> {quit} <- para salir.' % name
     client.send(bytes(welcome, "utf8"))
     msg = "%s a entrado al chat!" % name
     broadcast(bytes(msg, "utf8"))
