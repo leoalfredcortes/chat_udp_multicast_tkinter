@@ -42,9 +42,9 @@ top.title("Chat multi cast")
 
 messages_frame = tkinter.Frame(top)
 my_msg = tkinter.StringVar()  # variable para los mensajes que escriba el usuario
-my_msg.set("Escribe tus mensajes aqui.")
+my_msg.set("Escribe aqui.")
 scrollbar = tkinter.Scrollbar(messages_frame)  # scroll en caso de que los mensajes sean muchos sale
-msg_list = tkinter.Listbox(messages_frame, height=15, width=50, yscrollcommand=scrollbar.set)
+msg_list = tkinter.Listbox(messages_frame, height=15, width=80, yscrollcommand=scrollbar.set)
 scrollbar.pack(side=tkinter.RIGHT, fill=tkinter.Y)
 msg_list.pack(side=tkinter.LEFT, fill=tkinter.BOTH)
 msg_list.pack()
@@ -67,7 +67,7 @@ PORT = 33000
 BUFSIZ = 1024
 ADDR = (HOST, PORT)
 
-client_socket = socket(AF_INET, SOCK_STREAM)
+client_socket = socket()
 client_socket.connect(ADDR)
 
 receive_thread = Thread(target=receive)

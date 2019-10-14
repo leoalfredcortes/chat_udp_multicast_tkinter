@@ -59,7 +59,7 @@ PORT = 33000
 BUFSIZ = 1024
 ADDR = (HOST, PORT)
 #se inicializa el servidor por medio del socket como stream data
-SERVER = socket(AF_INET, SOCK_STREAM)
+SERVER = socket()
 #se hace el enlace con la direccion y puerto
 SERVER.bind(ADDR)
 #el servidor se mantiene a la escucha de algun cliente por medio del enlace previamente creado
