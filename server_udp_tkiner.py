@@ -42,8 +42,7 @@ def data_recibe():
         clientIP  = format(address)    
         clientMsg = format(message)
         area_conversation.insert(INSERT,clientIP +" Say: "+ clientMsg+ "\n")
-        q.put(bytesAddressPair)
-        
+        q.put(bytesAddressPair)        
 
 def clicked():
     client_IP= q.get()
@@ -56,15 +55,13 @@ def clicked():
 q = queue.Queue()
 
 tread1 = threading.Thread(target = data_recibe)
-tread2 = threading.Thread(target = clicked, args=q)
+#tread2 = threading.Thread(target = clicked, args=q)
 
 tread1.start()
-tread2.start()
-
+#tread2.start()
         
 btn = Button(window, text="Send", bg="blue", fg="white", command=clicked)
 btn.grid(column=1, row=4)
 
 window.mainloop()
-
     
